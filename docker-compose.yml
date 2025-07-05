@@ -1,0 +1,11 @@
+services:
+  feed-normalizer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: feed-normalizer
+    ports:
+      - "8080:8080"
+    environment:
+      JAVA_OPTS: "-Xms512m -Xmx1024m"
+    restart: unless-stopped
